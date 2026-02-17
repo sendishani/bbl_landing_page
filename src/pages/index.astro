@@ -1,0 +1,340 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pillars = [
+  {
+    n: '01',
+    title: 'Get more interviews',
+    desc: 'We help you show your experience in a way that actually gets noticed.',
+  },
+  {
+    n: '02',
+    title: 'Walk in prepared',
+    desc: 'Practice and prep for the specific company and role you\'re going after.',
+  },
+  {
+    n: '03',
+    title: 'Know what you\'re getting into',
+    desc: 'Understand a role or company properly before you say yes.',
+  },
+  {
+    n: '04',
+    title: 'Get the job',
+    desc: 'We\'re with you from your first application all the way to the offer.',
+  },
+];
+
+const products = [
+  {
+    category: 'Resume',
+    name: 'TexResume',
+    label: 'Launch TexResume',
+    desc: 'Customize your resume for every application—and always know which version you sent where. Match keywords, highlight the right skills, land more interviews.',
+    href: 'https://www.texresume.com/',
+    external: true,
+  },
+  {
+    category: 'Interview Prep',
+    name: 'Product Hippo',
+    label: 'Launch Product Hippo',
+    desc: 'Your first AI product coach to prepare product sense questions for product managers. Practice real questions, get actionable feedback, and walk in confident.',
+    // TODO: replace with live product URL
+    href: '#',
+    external: false,
+  },
+];
+---
+
+<Layout title="Brokenbox Labs — Land the job you want">
+
+  <!-- ────────────────────────────────────── NAV ── -->
+  <nav class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+    <div class="pointer-events-auto bg-white/95 backdrop-blur-sm border border-black/10 shadow-sm rounded-full px-5 h-11 flex items-center gap-4 whitespace-nowrap">
+
+      <!-- Logo mark + name -->
+      <a href="/" class="flex items-center gap-2.5 select-none">
+        <svg width="15" height="15" viewBox="0 0 18 18" fill="none" class="shrink-0 text-black">
+          <path d="M13 1.5H1.5V16.5H16.5V5" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+        <span class="text-sm font-medium tracking-tight">Brokenbox Labs</span>
+      </a>
+
+      <!-- Desktop divider + links -->
+      <div class="hidden sm:block w-px h-3.5 bg-black/12 shrink-0"></div>
+      <a href="/#products" class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Products</a>
+      <a href="/#mission"  class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Mission</a>
+      <a href="/privacy"   class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Privacy</a>
+      <div class="hidden sm:block w-px h-3.5 bg-black/12 shrink-0"></div>
+      <a href="mailto:dishani@brokenboxlab.com" class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Contact</a>
+
+      <!-- Mobile: hamburger -->
+      <button id="menu-open" class="sm:hidden flex flex-col justify-center gap-[5px] w-6 h-6 ml-1" aria-label="Open menu">
+        <span class="block w-full h-[1.5px] bg-black rounded-full"></span>
+        <span class="block w-full h-[1.5px] bg-black rounded-full"></span>
+        <span class="block w-3/4 h-[1.5px] bg-black rounded-full"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ────────────────────────────────────── MOBILE MENU ── -->
+  <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black text-white flex-col items-center justify-center gap-8 hidden">
+    <button id="menu-close" class="absolute top-7 right-7 text-white/50 hover:text-white transition-colors text-2xl leading-none" aria-label="Close menu">✕</button>
+    <nav class="flex flex-col items-center gap-7 text-center">
+      <a href="/#products" class="mobile-link text-3xl font-light tracking-tight hover:text-[#FEDD00] transition-colors duration-200">Products</a>
+      <a href="/#mission"  class="mobile-link text-3xl font-light tracking-tight hover:text-[#FEDD00] transition-colors duration-200">Mission</a>
+      <a href="/privacy"   class="mobile-link text-3xl font-light tracking-tight hover:text-[#FEDD00] transition-colors duration-200">Privacy</a>
+      <div class="w-8 border-t border-white/15 my-1"></div>
+      <a href="mailto:dishani@brokenboxlab.com" class="mobile-link text-base font-medium tracking-[0.15em] uppercase opacity-60 hover:opacity-100 transition-opacity duration-200">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ────────────────────────────────────── HERO ── -->
+  <section class="bg-black text-white min-h-svh flex flex-col justify-end pt-24 pb-20 md:pb-32">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+
+      <p class="hero-item delay-1 text-base md:text-lg font-light text-white/60 tracking-tight mb-5">
+        Brokenbox Labs
+      </p>
+      <div class="hero-item delay-2 w-10 border-t border-white/20 mb-8"></div>
+
+      <h1 class="hero-item delay-3 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.04] tracking-tight mb-10 max-w-4xl">
+        Land the job<br class="hidden sm:block" /> you actually want.
+      </h1>
+      <p class="hero-item delay-4 text-base md:text-xl text-white/55 max-w-2xl leading-relaxed font-light">
+        Built for PMs, designers, engineers and data scientists,
+        who are serious about their next move.
+      </p>
+
+      <!-- Waitlist form -->
+      <form id="waitlist-form" class="hero-item delay-5 flex flex-col sm:flex-row gap-2 mt-10 max-w-lg">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter your email"
+          class="flex-1 bg-white/8 border border-white/25 text-white placeholder:text-white/35 px-4 py-3 text-sm outline-none focus:border-white/60 transition-colors duration-200 rounded-none"
+        />
+        <button
+          type="submit"
+          class="waitlist-btn bg-white text-black px-6 py-3 text-sm font-medium whitespace-nowrap relative overflow-hidden transition-colors duration-200"
+        >
+          <span class="relative z-10">Get early access →</span>
+          <span class="waitlist-shimmer absolute top-0 left-0 h-full w-2/5 -translate-x-full -skew-x-12 bg-gradient-to-r from-transparent via-black/10 to-transparent"></span>
+        </button>
+      </form>
+      <p id="waitlist-success" class="hidden mt-4 text-sm text-white/60 font-light">
+        You're on the list. We'll be in touch.
+      </p>
+
+      <!-- Journey steps -->
+      <div class="hero-item delay-6 flex flex-wrap items-center gap-y-4 gap-x-3 mt-12">
+        <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
+          Get more interviews
+        </span>
+        <span class="journey-arrow arrow-d1 text-white/40 text-lg select-none">→</span>
+        <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
+          Prepare better
+        </span>
+        <span class="journey-arrow arrow-d2 text-white/40 text-lg select-none">→</span>
+        <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
+          Land the right role
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── WHAT WE DO ── -->
+  <section class="bg-white py-24 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <p data-reveal class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-14 font-medium">
+        What We Do
+      </p>
+      <div class="grid md:grid-cols-2 gap-x-20 gap-y-12 items-start">
+        <div>
+          <h2 data-reveal class="text-3xl md:text-4xl font-light tracking-tight leading-snug mb-8">
+            Everything you need to move your career forward.
+          </h2>
+          <p data-reveal class="text-base md:text-lg text-black/60 leading-relaxed font-light">
+            We offer a suite of AI-powered tools designed to work alongside
+            you—taking on the heavy lifting of job hunting so you can focus on
+            showing up at your best.
+          </p>
+        </div>
+
+        <div class="space-y-0">
+          {pillars.map((p, i) => (
+            <div data-reveal style={`transition-delay:${i * 0.1}s`} class="border-t border-black/10 py-6">
+              <span class="text-[0.65rem] tracking-[0.2em] text-black/30 font-medium uppercase">{p.n}</span>
+              <p class="text-[0.95rem] font-medium mt-2 mb-1.5 tracking-tight">{p.title}</p>
+              <p class="text-sm text-black/55 leading-relaxed font-light">{p.desc}</p>
+            </div>
+          ))}
+          <div class="border-t border-black/10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── PRODUCTS ── -->
+  <section id="products" class="bg-black text-white py-24 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <p data-reveal class="text-[0.68rem] tracking-[0.28em] uppercase text-white/35 mb-14 font-medium">
+        Our Tools
+      </p>
+      <h2 data-reveal class="text-3xl md:text-4xl font-light tracking-tight mb-16">
+        Two tools. One goal.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        {products.map((product, i) => (
+          <div data-reveal style={`transition-delay:${i * 0.15}s`} class="border border-white/12 p-8 md:p-10 flex flex-col justify-between min-h-72 hover:border-white/35 transition-colors duration-300 group">
+            <div>
+              <p class="text-[0.65rem] tracking-[0.22em] uppercase text-white/35 mb-7 font-medium">{product.category}</p>
+              <h3 class="text-2xl md:text-3xl font-light mb-4 tracking-tight">{product.name}</h3>
+              <p class="text-sm md:text-base text-white/55 leading-relaxed font-light max-w-xs">{product.desc}</p>
+            </div>
+            <a
+              href={product.href}
+              target={product.external ? '_blank' : '_self'}
+              rel={product.external ? 'noopener noreferrer' : undefined}
+              class="launch-btn self-start inline-flex items-center gap-3 mt-10 bg-white text-black px-6 py-3 text-sm font-medium tracking-tight relative overflow-hidden group/btn"
+            >
+              <span class="relative z-10">{product.label}</span>
+              <span class="relative z-10 transition-transform duration-300 group-hover/btn:translate-x-1.5">→</span>
+              <span class="shimmer-sweep absolute top-0 left-0 h-full w-2/5 -translate-x-full -skew-x-12 bg-gradient-to-r from-transparent via-black/10 to-transparent"></span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── FOOTER ── -->
+  <footer id="mission" class="bg-white py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div data-reveal class="border-t border-black/10 pt-12 flex flex-col md:flex-row md:items-end justify-between gap-10">
+        <div class="max-w-xl">
+          <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-6 font-medium">Where We're Headed</p>
+          <p class="text-xl md:text-2xl font-light tracking-tight leading-snug text-black/75">
+            Job hunting is painful. We want to make it easier for anyone to
+            grow and level up their career—and get you closer to your best life.
+          </p>
+        </div>
+        <div class="shrink-0 md:text-right">
+          <a href="mailto:dishani@brokenboxlab.com" class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-200 block mb-4">
+            dishani@brokenboxlab.com
+          </a>
+          <p class="text-xs text-black/30 tracking-wide">© 2026 Brokenbox Labs LLC</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</Layout>
+
+<style>
+  /* ── Hero entrance animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-item { animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .delay-1 { animation-delay: 0.05s; }
+  .delay-2 { animation-delay: 0.2s;  }
+  .delay-3 { animation-delay: 0.35s; }
+  .delay-4 { animation-delay: 0.55s; }
+  .delay-5 { animation-delay: 0.7s;  }
+  .delay-6 { animation-delay: 0.88s; }
+
+  /* ── Scroll reveal ── */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Launch button shimmer ── */
+  @keyframes shimmerSweep {
+    0%   { transform: translateX(-100%) skewX(-12deg); }
+    100% { transform: translateX(500%)  skewX(-12deg); }
+  }
+  .launch-btn { transition: background-color 0.2s ease, color 0.2s ease; }
+  .launch-btn:hover { background-color: #FEDD00; color: #000; }
+  .launch-btn .shimmer-sweep { animation: shimmerSweep 3s ease-in-out infinite; animation-delay: 1s; }
+  .launch-btn:nth-child(2) .shimmer-sweep { animation-delay: 1.8s; }
+  .launch-btn:hover .shimmer-sweep { animation-play-state: paused; }
+
+  /* ── Waitlist button shimmer ── */
+  .waitlist-btn:hover { background-color: #FEDD00; }
+  .waitlist-btn .waitlist-shimmer { animation: shimmerSweep 3s ease-in-out infinite; animation-delay: 2s; }
+  .waitlist-btn:hover .waitlist-shimmer { animation-play-state: paused; }
+
+  /* ── Journey buttons ── */
+  .journey-btn:hover { background-color: #FEDD00; border-color: #FEDD00; color: #000; }
+
+  /* ── Journey arrows ── */
+  @keyframes arrowNudge {
+    0%, 60%, 100% { transform: translateX(0);   opacity: 0.4; }
+    30%            { transform: translateX(6px); opacity: 0.9; }
+  }
+  .journey-arrow { display: inline-block; animation: arrowNudge 2.2s ease-in-out infinite; }
+  .arrow-d1 { animation-delay: 0s;    }
+  .arrow-d2 { animation-delay: 0.35s; }
+
+  /* ── Mobile menu ── */
+  #mobile-menu.open { display: flex; }
+</style>
+
+<script>
+  // ── Mobile menu ──────────────────────────────────────
+  const menuOpen  = document.getElementById('menu-open')!;
+  const menuClose = document.getElementById('menu-close')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  menuOpen.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('.mobile-link').forEach(link =>
+    link.addEventListener('click', closeMenu)
+  );
+
+  // ── Scroll reveal ────────────────────────────────────
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+
+  // ── Waitlist form ────────────────────────────────────
+  // TODO: replace action with your email service endpoint (Formspree, Mailchimp, etc.)
+  const form    = document.getElementById('waitlist-form') as HTMLFormElement;
+  const success = document.getElementById('waitlist-success')!;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+  });
+</script>

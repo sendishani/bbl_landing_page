@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pillars = [
+  {
+    n: '01',
+    title: 'Get more interviews',
+    desc: 'We look at your background and help you present it in a way that actually gets noticed.',
+  },
+  {
+    n: '02',
+    title: 'Prepare for the room',
+    desc: 'Practice real questions for the specific company and role you\'re going after.',
+  },
+  {
+    n: '03',
+    title: 'Understand what you\'re signing up for',
+    desc: 'Know the role, the company, and the offer before you say yes.',
+  },
+  {
+    n: '04',
+    title: 'Get the job',
+    desc: 'We\'re with you from the first application to the final offer.',
+  },
+];
+
+const products = [
+  {
+    category: 'Resume',
+    name: 'TexResume',
+    desc: 'Paste in a job description. We rewrite your resume to match it—so it reads like you were made for the role.',
+    href: '#',
+  },
+  {
+    category: 'Interview Prep',
+    name: 'Product Hippo',
+    desc: 'Interview prep built for product managers. Practice real questions, get honest feedback, and walk in ready.',
+    href: '#',
+  },
+];
+---
+
+<Layout title="Brokenbox Labs — A purpose-built toolkit for landing the job you want">
+
+  <!-- ────────────────────────────────────── NAV ── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/8">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/v2" class="text-sm font-medium tracking-tight select-none">
+        Brokenbox Labs
+      </a>
+      <a
+        href="mailto:dishani@brokenboxlab.com"
+        class="text-xs tracking-[0.18em] uppercase font-medium opacity-60 hover:opacity-100 transition-opacity duration-200"
+      >
+        Contact
+      </a>
+    </div>
+  </nav>
+
+  <!-- ────────────────────────────────────── HERO ── -->
+  <section class="bg-black text-white min-h-svh flex flex-col justify-end pt-24 pb-20 md:pb-32">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+
+      <!-- Company name as the centrepiece -->
+      <h1 class="text-6xl md:text-8xl lg:text-[7rem] font-light leading-[1.0] tracking-tight mb-8">
+        Brokenbox Labs
+      </h1>
+
+      <!-- Thin rule — same move Linear uses to separate name from statement -->
+      <div class="border-t border-white/15 mb-8 max-w-sm"></div>
+
+      <p class="text-xl md:text-2xl text-white/80 font-light tracking-tight leading-snug mb-5 max-w-2xl">
+        A purpose-built toolkit for landing the job you want.
+      </p>
+      <p class="text-base text-white/45 max-w-lg leading-relaxed font-light">
+        Built for product managers, designers, engineers, and data scientists
+        who are serious about their next move.
+      </p>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── WHAT WE DO ── -->
+  <section class="bg-white py-24 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-14 font-medium">
+        What We Do
+      </p>
+      <div class="grid md:grid-cols-2 gap-x-20 gap-y-12 items-start">
+
+        <div>
+          <h2 class="text-3xl md:text-4xl font-light tracking-tight leading-snug mb-8">
+            Everything you need to move your career forward.
+          </h2>
+          <p class="text-base md:text-lg text-black/60 leading-relaxed font-light">
+            We built tools that handle the hard parts of job hunting—so you can
+            focus on showing up at your best.
+          </p>
+        </div>
+
+        <div class="space-y-0">
+          {pillars.map((p) => (
+            <div class="border-t border-black/10 py-6">
+              <span class="text-[0.65rem] tracking-[0.2em] text-black/30 font-medium uppercase">
+                {p.n}
+              </span>
+              <p class="text-[0.95rem] font-medium mt-2 mb-1.5 tracking-tight">{p.title}</p>
+              <p class="text-sm text-black/55 leading-relaxed font-light">{p.desc}</p>
+            </div>
+          ))}
+          <div class="border-t border-black/10"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── PRODUCTS ── -->
+  <section id="products" class="bg-black text-white py-24 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-[0.68rem] tracking-[0.28em] uppercase text-white/35 mb-14 font-medium">
+        Our Tools
+      </p>
+      <h2 class="text-3xl md:text-4xl font-light tracking-tight mb-16">
+        Two tools. One goal.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        {products.map((product) => (
+          <div class="border border-white/12 p-8 md:p-10 flex flex-col justify-between min-h-72 hover:border-white/35 transition-colors duration-300 group">
+            <div>
+              <p class="text-[0.65rem] tracking-[0.22em] uppercase text-white/35 mb-7 font-medium">
+                {product.category}
+              </p>
+              <h3 class="text-2xl md:text-3xl font-light mb-4 tracking-tight">{product.name}</h3>
+              <p class="text-sm md:text-base text-white/55 leading-relaxed font-light max-w-xs">
+                {product.desc}
+              </p>
+            </div>
+            <a
+              href={product.href}
+              class="inline-flex items-center text-sm font-medium mt-10 opacity-60 hover:opacity-100 transition-opacity duration-200 group-hover:opacity-80"
+            >
+              Launch {product.name}
+              <span class="ml-2 inline-block transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────────── FOOTER ── -->
+  <footer class="bg-white py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border-t border-black/10 pt-12 flex flex-col md:flex-row md:items-end justify-between gap-10">
+
+        <div class="max-w-xl">
+          <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-6 font-medium">
+            Where We're Headed
+          </p>
+          <p class="text-xl md:text-2xl font-light tracking-tight leading-snug text-black/75">
+            We want to make it easier for anyone to change jobs, grow, or figure
+            out what's next—without all the usual guesswork.
+          </p>
+        </div>
+
+        <div class="shrink-0 md:text-right">
+          <a
+            href="mailto:dishani@brokenboxlab.com"
+            class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-200 block mb-4"
+          >
+            dishani@brokenboxlab.com
+          </a>
+          <p class="text-xs text-black/30 tracking-wide">
+            © 2026 Brokenbox Labs LLC
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</Layout>
