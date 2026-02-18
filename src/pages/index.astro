@@ -188,10 +188,18 @@ const products = [
       <div class="grid md:grid-cols-2 gap-5">
         {products.map((product, i) => (
           <div data-reveal style={`transition-delay:${i * 0.15}s`} class="border border-white/12 p-8 md:p-10 flex flex-col justify-between min-h-72 hover:border-white/35 transition-colors duration-300 group">
-            <div>
-              <p class="text-[0.65rem] tracking-[0.22em] uppercase text-white/35 mb-7 font-medium">{product.category}</p>
-              <h3 class="text-2xl md:text-3xl font-light mb-4 tracking-tight">{product.name}</h3>
-              <p class="text-sm md:text-base text-white/55 leading-relaxed font-light max-w-xs">{product.desc}</p>
+            <div class={product.name === 'Product Hippo' ? 'flex gap-6 items-start justify-between' : ''}>
+              <div>
+                <p class="text-[0.65rem] tracking-[0.22em] uppercase text-white/35 mb-7 font-medium">{product.category}</p>
+                <h3 class="text-2xl md:text-3xl font-light mb-4 tracking-tight">{product.name}</h3>
+                <p class="text-sm md:text-base text-white/55 leading-relaxed font-light max-w-xs">{product.desc}</p>
+              </div>
+              {product.name === 'Product Hippo' && (
+                <div class="relative shrink-0 w-36 rounded-2xl overflow-hidden self-start mt-1">
+                  <img src="/hippo.jpg" alt="Product Hippo mascot" class="w-full h-auto block" />
+                  <div class="hippo-eyelid absolute rounded-full" style="top:23%; left:52%; width:9%; height:6.5%; background:#9cc5d8;"></div>
+                </div>
+              )}
             </div>
             <a
               href={product.href}
@@ -343,6 +351,21 @@ const products = [
 
   /* ── Mobile menu ── */
   #mobile-menu.open { display: flex; }
+
+  /* ── Product Hippo wink ── */
+  .hippo-eyelid {
+    transform: scaleY(0);
+    transform-origin: top center;
+    animation: hippoWink 5s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes hippoWink {
+    0%, 65%, 100% { transform: scaleY(0); }
+    70%           { transform: scaleY(1); }
+    82%           { transform: scaleY(1); }
+    88%           { transform: scaleY(0); }
+  }
 </style>
 
 <script>
