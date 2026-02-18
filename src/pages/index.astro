@@ -4,23 +4,23 @@ import Layout from '../layouts/Layout.astro';
 const pillars = [
   {
     n: '01',
-    title: 'Get more interviews',
-    desc: 'We help you show your experience in a way that actually gets noticed.',
+    title: 'Know your edge',
+    desc: 'Understand what makes you exceptional — and how to make it visible.',
   },
   {
     n: '02',
-    title: 'Walk in prepared',
-    desc: 'Practice and prep for the specific company and role you\'re going after.',
+    title: 'Show up AI-ready',
+    desc: 'Walk into every opportunity prepared, informed, and ahead of the curve.',
   },
   {
     n: '03',
-    title: 'Know what you\'re getting into',
-    desc: 'Understand a role or company properly before you say yes.',
+    title: 'Build real leverage',
+    desc: 'Position yourself so the right opportunities come to you.',
   },
   {
     n: '04',
-    title: 'Get the job',
-    desc: 'We\'re with you from your first application all the way to the offer.',
+    title: 'Become the top 1%',
+    desc: 'With AI working alongside you, the gap between good and exceptional closes fast.',
   },
 ];
 
@@ -62,7 +62,7 @@ const products = [
       <!-- Desktop divider + links -->
       <div class="hidden sm:block w-px h-3.5 bg-black/12 shrink-0"></div>
       <a href="/#products" class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Products</a>
-      <a href="/#mission"  class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Mission</a>
+      <a href="/#mission"  class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Purpose</a>
       <a href="/privacy"   class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Privacy</a>
       <div class="hidden sm:block w-px h-3.5 bg-black/12 shrink-0"></div>
       <a href="mailto:dishani@brokenboxlab.com" class="hidden sm:block text-xs tracking-[0.15em] uppercase font-medium opacity-50 hover:opacity-100 transition-opacity duration-200">Contact</a>
@@ -99,11 +99,12 @@ const products = [
       <div class="hero-item delay-2 w-10 border-t border-white/20 mb-8"></div>
 
       <h1 class="hero-item delay-3 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.04] tracking-tight mb-10 max-w-4xl">
-        Land the job<br class="hidden sm:block" /> you actually want.
+        AI changed your job.<br class="hidden sm:block" /> <span class="highlighted">Level up.</span>
       </h1>
       <p class="hero-item delay-4 text-base md:text-xl text-white/55 max-w-2xl leading-relaxed font-light">
-        Built for PMs, designers, engineers and data scientists,
-        who are serious about their next move.
+        Are you a PM, designer, engineer, or data scientist — and not yet
+        AI-forward? The best time to start was yesterday. The second best
+        time is today.
       </p>
 
       <!-- Waitlist form -->
@@ -119,7 +120,7 @@ const products = [
           type="submit"
           class="waitlist-btn bg-white text-black px-6 py-3 text-sm font-medium whitespace-nowrap relative overflow-hidden transition-colors duration-200"
         >
-          <span class="relative z-10">Get early access →</span>
+          <span class="relative z-10">Get started now →</span>
           <span class="waitlist-shimmer absolute top-0 left-0 h-full w-2/5 -translate-x-full -skew-x-12 bg-gradient-to-r from-transparent via-black/10 to-transparent"></span>
         </button>
       </form>
@@ -130,15 +131,15 @@ const products = [
       <!-- Journey steps -->
       <div class="hero-item delay-6 flex flex-wrap items-center gap-y-4 gap-x-3 mt-12">
         <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
-          Get more interviews
+          Build agentic skills
         </span>
         <span class="journey-arrow arrow-d1 text-white/40 text-lg select-none">→</span>
         <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
-          Prepare better
+          Gain leverage
         </span>
         <span class="journey-arrow arrow-d2 text-white/40 text-lg select-none">→</span>
         <span class="journey-btn border border-white/60 px-7 py-3.5 text-base font-medium text-white tracking-tight cursor-default transition-all duration-200">
-          Land the right role
+          Land your dream role
         </span>
       </div>
 
@@ -154,12 +155,12 @@ const products = [
       <div class="grid md:grid-cols-2 gap-x-20 gap-y-12 items-start">
         <div>
           <h2 data-reveal class="text-3xl md:text-4xl font-light tracking-tight leading-snug mb-8">
-            Everything you need to move your career forward.
+            With AI, your job isn't the same as it was. Neither should your career be.
           </h2>
           <p data-reveal class="text-base md:text-lg text-black/60 leading-relaxed font-light">
             We offer a suite of AI-powered tools designed to work alongside
-            you—taking on the heavy lifting of job hunting so you can focus on
-            showing up at your best.
+            you—making you AI-ready, building your confidence, and preparing
+            you to put your best foot forward in every opportunity.
           </p>
         </div>
 
@@ -181,11 +182,8 @@ const products = [
   <section id="products" class="bg-black text-white py-24 md:py-36">
     <div class="max-w-6xl mx-auto px-6">
       <p data-reveal class="text-[0.68rem] tracking-[0.28em] uppercase text-white/35 mb-14 font-medium">
-        Our Tools
+        Products
       </p>
-      <h2 data-reveal class="text-3xl md:text-4xl font-light tracking-tight mb-16">
-        Two tools. One goal.
-      </h2>
 
       <div class="grid md:grid-cols-2 gap-5">
         {products.map((product, i) => (
@@ -214,27 +212,75 @@ const products = [
   <!-- ────────────────────────────────────── FOOTER ── -->
   <footer id="mission" class="bg-white py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-6">
-      <div data-reveal class="border-t border-black/10 pt-12 flex flex-col md:flex-row md:items-end justify-between gap-10">
-        <div class="max-w-xl">
-          <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-6 font-medium">Where We're Headed</p>
-          <p class="text-xl md:text-2xl font-light tracking-tight leading-snug text-black/75">
-            Job hunting is painful. We want to make it easier for anyone to
-            grow and level up their career—and get you closer to your best life.
+
+      <!-- Mission + Vision -->
+      <div data-reveal class="border-t border-black/10 pt-12 grid md:grid-cols-2 gap-x-20 gap-y-14 mb-16">
+
+        <div>
+          <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-6 font-medium">Mission</p>
+          <p class="text-xl md:text-2xl font-light tracking-tight leading-snug text-black/80 mb-4">
+            Don't just adapt to AI.<br />Let it make you exceptional.
+          </p>
+          <p class="text-sm md:text-base text-black/55 leading-relaxed font-light">
+            Our mission is to make you the top 1% next-gen talent that every
+            company wants — and never get left behind. We close the gap, so you
+            can stop watching the future happen and start leading it.
           </p>
         </div>
-        <div class="shrink-0 md:text-right">
-          <a href="mailto:dishani@brokenboxlab.com" class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-200 block mb-4">
-            dishani@brokenboxlab.com
-          </a>
-          <p class="text-xs text-black/30 tracking-wide">© 2026 Brokenbox Labs LLC</p>
+
+        <div>
+          <p class="text-[0.68rem] tracking-[0.28em] uppercase text-black/35 mb-6 font-medium">Vision</p>
+          <p class="text-xl md:text-2xl font-light tracking-tight leading-snug text-black/80 mb-4">
+            A career you're proud of.<br />A life you actually want.
+          </p>
+          <p class="text-sm md:text-base text-black/55 leading-relaxed font-light">
+            We want to make it easier for anyone to grow, level up, and navigate
+            their career with confidence — and get you closer to living your
+            best life.
+          </p>
         </div>
+
       </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-black/10 pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <p class="text-xs text-black/30 tracking-wide">© 2026 Brokenbox Labs LLC</p>
+        <a href="mailto:dishani@brokenboxlab.com" class="text-sm font-medium opacity-60 hover:opacity-100 transition-opacity duration-200">
+          dishani@brokenboxlab.com
+        </a>
+      </div>
+
     </div>
   </footer>
 
 </Layout>
 
 <style>
+  /* ── Headline highlight — animated underline ── */
+  .highlighted {
+    position: relative;
+    display: inline;
+    padding-bottom: 0.08em;
+  }
+
+  .highlighted::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FEDD00;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: drawLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: 1.2s;
+  }
+
+  @keyframes drawLine {
+    to { transform: scaleX(1); }
+  }
+
   /* ── Hero entrance animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(22px); }
@@ -277,16 +323,23 @@ const products = [
   .waitlist-btn:hover .waitlist-shimmer { animation-play-state: paused; }
 
   /* ── Journey buttons ── */
-  .journey-btn:hover { background-color: #FEDD00; border-color: #FEDD00; color: #000; }
-
-  /* ── Journey arrows ── */
-  @keyframes arrowNudge {
-    0%, 60%, 100% { transform: translateX(0);   opacity: 0.4; }
-    30%            { transform: translateX(6px); opacity: 0.9; }
+  .journey-btn {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   }
-  .journey-arrow { display: inline-block; animation: arrowNudge 2.2s ease-in-out infinite; }
-  .arrow-d1 { animation-delay: 0s;    }
-  .arrow-d2 { animation-delay: 0.35s; }
+  .journey-btn:hover {
+    border-color: #FEDD00;
+    color: #fff;
+    box-shadow: 0 0 0 1px #FEDD00, 0 0 16px rgba(254, 221, 0, 0.15);
+  }
+
+  /* ── Journey arrows — sequential opacity wave ── */
+  @keyframes arrowWave {
+    0%, 35%, 100% { opacity: 0.2; }
+    17%            { opacity: 0.85; }
+  }
+  .journey-arrow { display: inline-block; animation: arrowWave 3.5s ease-in-out infinite; }
+  .arrow-d1 { animation-delay: 0s;   }
+  .arrow-d2 { animation-delay: 0.5s; }
 
   /* ── Mobile menu ── */
   #mobile-menu.open { display: flex; }
